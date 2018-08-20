@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography"
 import constants from "../utils/constants"
 
 const ArticleTemplate = ({ data }) => (
-  <Layout>
+  <Layout data={data}>
     <div
       css={{
         background: constants.paleYellow,
@@ -70,8 +70,9 @@ export default ArticleTemplate
 
 export const query = graphql`
   query($slug: String!) {
+    ...AllTags
     nodeArticle(fields: { slug: { eq: $slug } }) {
       ...ArticleNode
     }
   }
-`
+`;

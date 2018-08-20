@@ -9,11 +9,12 @@ import "typeface-josefin-slab"
 import { rhythm, scale } from "../utils/typography"
 import constants from "../utils/constants";
 import Container from "../components/container"
-
+import Menu from "../components/menu"
 
 
 class DefaultLayout extends React.Component {
-  render() {
+  render() { 
+    console.log(this.props);
     return (
       <div>
         <header
@@ -21,6 +22,7 @@ class DefaultLayout extends React.Component {
             background: constants.paleYellow,
           }}
         >
+        <Menu items={this.props.data.allTaxonomyTermTags.edges} />
           <div
             css={{
               height: rhythm(1.5),

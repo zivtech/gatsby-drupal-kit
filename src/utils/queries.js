@@ -29,6 +29,22 @@ fragment ArticleNode on node__article {
 }
 `;
 
+export const AllTags = graphql`
+fragment AllTags on Query { 
+  allTaxonomyTermTags {
+    edges {
+      node {
+        name
+        tid
+        path {
+          alias
+        }
+      }
+    }
+  }
+}
+`;
+
 export const pageQuery = graphql`
 query {
   allTaxonomyTermTags {

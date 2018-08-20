@@ -10,7 +10,7 @@ import { rhythm } from "../utils/typography"
 import constants from "../utils/constants"
 import queries from "../utils/queries"
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout data={data}>
     <Container>
       <h1>Articles</h1>
 
@@ -32,6 +32,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
+    ...AllTags
     allNodeArticle(limit: 1000) {
       edges {
         node {

@@ -6,7 +6,7 @@ import {
 } from "typography-breakpoint-constants"
 
 const options = {
-  baseFontSize: `18px`,
+  baseFontSize: `14px`,
   baseLineHeight: 1.45,
   blockMarginBottom: 0.75,
   scaleRatio: 2.15,
