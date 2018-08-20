@@ -29,9 +29,9 @@ export const query = graphql`
   query($tid: Int!) {
    allNodeArticle {
      edges {
-       node {
-         title
-       }
+        node {
+          ...ArticleNode
+        }
      }
      
     }

@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://nicklewisatx8jeduqqrqmb.devcloud.acquia-sites.com/`,
+        baseUrl: `http://dev-drupal-gatsby.pantheonsite.io/`,
         apiBase: `jsonapi`,
       },
     },
@@ -25,6 +25,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography.js`,
       },
-    },
+    }
   ],
 }

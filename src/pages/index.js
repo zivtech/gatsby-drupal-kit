@@ -5,20 +5,25 @@ import Img from "gatsby-image"
 
 import Layout from "../layouts"
 import Container from "../components/container"
+import Teaser from "../components/teaser"
 import { rhythm } from "../utils/typography"
 import constants from "../utils/constants"
-
+import queries from "../utils/queries"
 const IndexPage = ({ data }) => (
   <Layout>
     <Container>
-      <h1>Recipes</h1>
-      <ul>
+      <h1>Articles</h1>
+
         {data.allNodeArticle.edges.map(({ node }) => (
-          <li>
-            <Link to={node.fields.slug}>{node.title}</Link>
-          </li>
+
+            <Teaser 
+              image={node.relationships.field_image.localFile.childImageSharp.fluid} title={node.title} 
+              path={node.path.alias} 
+              content={node.body.value}
+            />
+
         ))}
-      </ul>
+  
     </Container>
   </Layout>
 )
@@ -30,10 +35,7 @@ export const query = graphql`
     allNodeArticle(limit: 1000) {
       edges {
         node {
-          title
-          fields {
-            slug
-          }
+          ...ArticleNode
         }
       }
     }

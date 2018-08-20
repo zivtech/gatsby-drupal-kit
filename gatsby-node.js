@@ -19,9 +19,9 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const recipeTemplate = path.resolve(`src/templates/recipe.js`)
+    const articleTemplate = path.resolve(`src/templates/article.js`)
     const categoryTemplate = path.resolve(`src/templates/category.js`)
-    // Query for recipe nodes to use in creating pages.
+    // page building queries
     resolve(
       graphql(
         `
@@ -65,12 +65,13 @@ exports.createPages = ({ actions, graphql }) => {
         result.data.allNodeArticle.edges.forEach(({ node }) => {
           createPage({
             path: node.path.alias,
-            component: recipeTemplate,
+            component: articleTemplate,
             context: {
               slug: node.fields.slug
             },
           })
         })
+        //pages for each term
         result.data.allTaxonomyTermTags.edges.forEach(({ node }) => {
           createPage({
             path: node.path.alias,
