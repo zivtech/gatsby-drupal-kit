@@ -3,12 +3,12 @@ import styles from "./menu.module.css";
 import Img from "gatsby-image";
 import Container from "../container";
 import { rhythm } from "../../utils/typography"
-
+console.log(styles);
 class Menu extends React.Component {
   render() {
-    console.log(this);
+
     return (
-      <div>
+      <div className={styles.mainMenu}>
         <ul>
           <li><a href="/">Home</a></li>
           {this.props.items &&
