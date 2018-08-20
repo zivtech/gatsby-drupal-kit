@@ -74,10 +74,11 @@ class DefaultLayout extends React.Component {
               </p>
               <p>
                 Read the{` `}
-                <a href="https://github.com/gatsbyjs/gatsby/tree/master/examples/using-drupal">
+                <a href="https://github.com/zivtech/gatsby-drupal8">
                   source for this website.
                 </a>
               </p>
+              <p><a href="http://dev-drupal-gatsby.pantheonsite.io">Drupal 8 source site</a></p>
             </div>
             <div
               css={{ float: `right`, maxWidth: `50%`, paddingLeft: rhythm(1) }}
