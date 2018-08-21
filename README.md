@@ -1,7 +1,9 @@
 This a Drupal 8 gatsby starter kit designed to work out-of-the-box (more or less) with a standard drupal 8 install profile. Currently a work in progress. 
 
-# "Quick start guide"  
+Drupal site: http://dev-drupal-gatsby.pantheonsite.io/
+Gatsby site: https://clever-gates-db60f2.netlify.com/
 
+# "Quick start guide" 
 ## Gatsby Setup 
 1. Fork and/or clone this repo into a directory... any directory (no vm/mamp nonsense needed). 
 2. run "npm install --global gatsby-cli" (google "install node" if this doesn't work)
@@ -21,13 +23,20 @@ This a Drupal 8 gatsby starter kit designed to work out-of-the-box (more or less
 1. At the root of the gatsby repo, edit "gatsby-node.js" 
 2. Replace "http://dev-drupal-gatsby.pantheonsite.io/" with your site's publically accessible url. 
 
-## Make it work for real 
+## Setup a live CI enviroment 
 1. Sign up for a free netlify.com account. 
 2. Connect your github repo (forked or cloned from this code)
-3. select "gatsby as the platform" 
+3. select "gatsby" as the platform
 4. Create a webhook in netlify. 
-5. Configure drupal to fire the webhook on content updates. 
+5. Configure drupal to fire the webhook to that url on content updates. 
 
-By this point your netlify gatsby site will auto update anytime you push to master branch, or update content in drupal. When working locally, you'll have to shut down "gatsby develop" and restart it for content changes to take effect. 
+By this point your netlify gatsby site will auto-update anytime you *push to master branch*, or *update content* in drupal. When working locally, you'll have to shut down "gatsby develop" and restart it for content changes to take effect. 
+
+# Quick note on gatsby hosting/deployments 
+This is a brave new world where all pages are static, and overloading a server is next to impossible. It should never be a problem for gatsby to completely rebuild all pages for any reason or at any frequency. The static page *is* the cache in a way, and only a backend process can produce the pages... In otherwords, 10 dollar a month hosting + a cdn would be fine for a high traffic webste!  
+
+So on netlify, the worst that can happen is you push bad code to master. This causes the build to be rejected, and content updates will stop appearing until the error is fixed. 
+
+The next worst thing is if you publish content that shouldn't have gotten published. On average, expect prod builds to have a delay of about 2 mins for a for real site. The netlify CDN is sometimes finicky about clearing (for the most part it is immediate, but I've seen it get stuck for 30 mins or so for no apparent reason).
 
 
