@@ -15,6 +15,9 @@ fragment ArticleNode on node__article {
       relationships {
         field_tags {
           name
+          path {
+            alias
+          }
         }
         field_image {
           localFile {
