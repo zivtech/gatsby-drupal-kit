@@ -17,8 +17,10 @@ const IndexPage = ({ data }) => (
         {data.allNodeArticle.edges.map(({ node }) => (
 
             <Teaser 
+              key={node.nid}
               image={node.relationships.field_image.localFile.childImageSharp.fluid} title={node.title} 
               path={node.path.alias} 
+              node={node}
               content={node.body.value}
             />
 

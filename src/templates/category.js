@@ -13,13 +13,12 @@ const CategoryTemplate = ({ data }) => (
       <h1>{data.taxonomyTermTags.name}</h1>
 
         {data.allNodeArticle.edges.map(({ node }) => (
-
             <Teaser 
               image={node.relationships.field_image.localFile.childImageSharp.fluid} title={node.title} 
               path={node.path.alias} 
               content={node.body.value}
+              node={node}
             />
-
         ))}
   
     </Container>

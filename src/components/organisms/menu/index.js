@@ -14,7 +14,7 @@ class Menu extends React.Component {
         <ul>
           <li><a href="/">Home</a></li>
           {this.props.items &&
-            this.props.items.map(ing => <li><a href={ing.node.path.alias}> {ing.node.name}</a></li>)}
+            this.props.items.map(ing => <li key={ing.node.path.alias}><a href={ing.node.path.alias}> {ing.node.name}</a></li>)}
         </ul>
       </div>
 
