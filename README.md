@@ -1,9 +1,10 @@
-This a Drupal 8 gatsby starter kit designed to work out-of-the-box (more or less) with a standard drupal 8 install profile. Currently a work in progress. 
+
+# NOT YET STABLE (for experimental purpose only)  
+This a Drupal 8 gatsby V2 starter kit designed to work out-of-the-box (more or less) with a standard drupal 8 install profile. Currently a work in progress. 
 
 Drupal site: http://dev-drupal-gatsby.pantheonsite.io/
 Gatsby site: https://clever-gates-db60f2.netlify.com/
 
-# "Quick start guide" 
 ## Gatsby Setup 
 1. Fork and/or clone this repo into a directory... any directory (no vm/mamp nonsense needed). 
 2. run "npm install --global gatsby-cli" (google "install node" if this doesn't work)
