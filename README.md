@@ -33,17 +33,6 @@ Gatsby site: https://clever-gates-db60f2.netlify.com/
 
 By this point your netlify gatsby site will auto-update anytime you *push to master branch*, or *update content* in drupal. When working locally, you'll have to shut down "gatsby develop" and restart it for content changes to take effect. 
 
-# "Extending" this kit 
-I'm not a gatsby expert, so this is sort of the blind leading the blind. Wrote a blogpost on the parts, how to use them. In this particular example, we creating a new pipeline, and template for the "page" content type. Should apply to most anything...
-(url)
-
-# Some notes on gatsby hosting/deployments 
-This is a brave new world where all pages are static, and overloading a server is next to impossible. It should never be a problem for gatsby to completely rebuild all pages for any reason or at any frequency. The static page *is* the cache in a way, and only a backend process can produce the pages... In otherwords, 10 dollar a month hosting + a cdn would be fine for a high traffic webste!  
-
-So on netlify, the worst that can happen is you push bad code to master. This causes the build to be rejected, and content updates will stop appearing until the error is fixed. 
-
-The next worst thing is if you publish content that shouldn't have gotten published. On average, expect prod builds to have a delay of about 2 mins for a for real site. The netlify CDN is sometimes finicky about clearing (for the most part it is immediate, but I've seen it get stuck for 30 mins or so for no apparent reason).
-
 # Motivations for creating a new starter kit. 
 Confession: I'm very new to react/gatsby. This repo is based on https://github.com/gatsbyjs/gatsby/tree/master/examples/using-drupal
 
