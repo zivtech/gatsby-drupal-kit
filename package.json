@@ -11,7 +11,6 @@
     "extract-text-webpack-plugin": "next",
     "gatsby": "next",
     "gatsby-image": "next",
-    "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
