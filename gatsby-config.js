@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby with Drupal`,
+    title: 'Gatsby Drupal Kit',
+    author: 'Nick Lewis',
+    description: "Starting point for new Drupal 8 sites. Let's see how it goes",
+    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
   },
   plugins: [
     {
@@ -11,20 +14,58 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        trackingId: `UA-93349937-2`,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-glamor`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    'gatsby-plugin-glamor',
+    `gatsby-plugin-sharp`,
+    'gatsby-image',
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        pathToConfigModule: `src/utils/typography.js`,
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
-    }
+    },
+    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Starter Blog`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/assets/feed-icon.png`,
+      },
+    },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
   ],
 }

@@ -4,20 +4,19 @@ const path = require(`path`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
-    const slug = 'articles/' + node.nid;
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
+  const slug = 'articles/' + node.nid;
+  createNodeField({
+    node,
+    name: `slug`,
+    value: slug,
+  })
 
-} 
+}
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-
   return new Promise((resolve, reject) => {
     const articleTemplate = path.resolve(`src/templates/article.js`)
     const categoryTemplate = path.resolve(`src/templates/category.js`)

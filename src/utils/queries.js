@@ -22,8 +22,17 @@ fragment ArticleNode on node__article {
         field_image {
           localFile {
             childImageSharp {
+              
                   fluid(maxWidth: 470, maxHeight: 353) {
-                    ...GatsbyImageSharpFluid
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                  resolutions {
+                    width
+                    height
                   }
                 }
           }
