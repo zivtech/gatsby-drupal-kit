@@ -18,8 +18,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
-    const articleTemplate = path.resolve(`src/templates/article.js`)
-    const categoryTemplate = path.resolve(`src/templates/category.js`)
+    const articleTemplate = path.resolve(`src/templates/node/article/index.js`)
+    const pageTemplate = path.resolve(`src/templates/node/page/index.js`)
+    const categoryTemplate = path.resolve(`src/templates/taxonomy/tag/index.js`)
     // page building queries
     resolve(
       graphql(
@@ -36,13 +37,28 @@ exports.createPages = ({ actions, graphql }) => {
               }
             }
           }
+          allNodePage {
+            edges {
+              node {
+                title
+                path {
+                  alias
+                }
+                body {
+                  value
+                }
+                fields {
+                  slug
+                }
+              }
+            }
+          }
           allNodeArticle {
              edges {
                node {
                  title
                  nid
                  path {
-                   langcode
                    alias
                  }
                  body {
@@ -61,6 +77,16 @@ exports.createPages = ({ actions, graphql }) => {
           reject(result.errors)
         }
         // pages for each article.
+        result.data.allNodePage.edges.forEach(({ node }) => {
+  
+          createPage({
+            path: node.path.alias,
+            component: pageTemplate,
+            context: {
+              slug: node.fields.slug
+            },
+          })
+        })
         result.data.allNodeArticle.edges.forEach(({ node }) => {
           createPage({
             path: node.path.alias,
