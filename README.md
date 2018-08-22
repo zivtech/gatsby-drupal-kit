@@ -1,5 +1,5 @@
 
-# NOT YET STABLE (for experimental purpose only)  
+# NOT YET STABLE (hello badcamp folks, this is only public for you :-D )  
 This a Drupal 8 gatsby V2 starter kit designed to work out-of-the-box (more or less) with a standard drupal 8 install profile. Currently a work in progress. 
 
 Drupal site: http://dev-drupal-gatsby.pantheonsite.io/
