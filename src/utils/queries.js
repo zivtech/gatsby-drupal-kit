@@ -22,7 +22,6 @@ fragment ArticleNode on node__article {
         field_image {
           localFile {
             childImageSharp {
-              
                   fluid(maxWidth: 470, maxHeight: 353) {
                     tracedSVG
                     aspectRatio
@@ -48,6 +47,21 @@ fragment AllTags on Query {
       node {
         name
         tid
+        path {
+          alias
+        }
+      }
+    }
+  }
+}
+`;
+
+export const AllPages = graphql`
+fragment AllPages on Query { 
+  allNodePage {
+    edges {
+      node {
+        title
         path {
           alias
         }

@@ -34,6 +34,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
+    ...AllPages
     ...AllTags
     allNodeArticle(limit: 1000) {
       edges {

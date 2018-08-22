@@ -3,7 +3,6 @@ import styles from "./node-info.module.scss";
 import Img from "gatsby-image";
 import Container from "../../atoms/container";
 import { rhythm } from "../../../utils/typography"
-console.log(styles);
 
 class NodeInfo extends React.Component {
   render() {

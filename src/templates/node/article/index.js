@@ -1,10 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
-import styles from "./article.module.css"
-import Layout from "../layouts"
-import Container from "../components/atoms/container"
-import { rhythm } from "../utils/typography"
-import constants from "../utils/constants"
+import styles from "./article.module.scss"
+import Layout from "../../../layouts"
+import Container from "../../../components/atoms/container"
+import NodeInfo from "../../../components/molecules/NodeInfo"
+import { rhythm } from "../../../utils/typography"
+import constants from "../../../utils/constants"
 
 const ArticleTemplate = ({ data }) => (
   <Layout data={data}>
@@ -33,12 +34,9 @@ const ArticleTemplate = ({ data }) => (
 
           <div dangerouslySetInnerHTML={{__html: data.nodeArticle.body.value }} />
           </div>
-          <div className={styles.articleInfo}>
-          <strong>Filed under:</strong>       
-       
-                {data.nodeArticle.relationships.field_tags &&
-                  data.nodeArticle.relationships.field_tags.map(ing => <a className={styles.tag} href={ing.path.alias}> {ing.name} </a>)}
-          </div>
+          <NodeInfo 
+            node={data.nodeArticle}
+          />
         </div>
       </Container>
     </div>
@@ -50,6 +48,7 @@ export default ArticleTemplate
 export const query = graphql`
   query($slug: String!) {
     ...AllTags
+    ...AllPages
     nodeArticle(fields: { slug: { eq: $slug } }) {
       ...ArticleNode
     }

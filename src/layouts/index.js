@@ -8,6 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 import constants from "../utils/constants";
 import Container from "../components/atoms/container"
 import Menu from "../components/organisms/menu"
+import FooterLinks from "../components/organisms/FooterLinks"
 
 
 class DefaultLayout extends React.Component {
@@ -80,6 +81,8 @@ class DefaultLayout extends React.Component {
             <div
               css={{ float: `right`, maxWidth: `50%`, paddingLeft: rhythm(1) }}
             >
+              <FooterLinks items={this.props.data.allNodePage.edges} /> 
+              <br />
               Copyright {new Date().getFullYear()} Terms & Conditions
             </div>
           </Container>

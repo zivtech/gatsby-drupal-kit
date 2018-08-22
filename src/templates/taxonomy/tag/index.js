@@ -1,11 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import Layout from "../layouts"
-import Container from "../components/atoms/container"
-import Teaser from "../components/organisms/teaser"
-import { rhythm } from "../utils/typography"
-import constants from "../utils/constants"
+import Layout from "../../../layouts"
+import Container from "../../../components/atoms/container"
+import Teaser from "../../../components/organisms/teaser"
+import { rhythm } from "../../../utils/typography"
+import constants from "../../../utils/constants"
 
 const CategoryTemplate = ({ data }) => (
   <Layout data={data}>
@@ -30,7 +30,7 @@ export default CategoryTemplate
 export const query = graphql`
 
   query($tid: Int) {
-
+  ...AllPages
   ...AllTags
   taxonomyTermTags(tid :{ eq: $tid}) {
     tid
