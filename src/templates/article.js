@@ -1,9 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 import styles from "./article.module.css"
-console.log(styles);
 import Layout from "../layouts"
-import Container from "../components/container"
+import Container from "../components/atoms/container"
 import { rhythm } from "../utils/typography"
 import constants from "../utils/constants"
 

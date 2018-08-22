@@ -6,8 +6,8 @@ import gray from "gray-percentage"
 
 import { rhythm, scale } from "../utils/typography"
 import constants from "../utils/constants";
-import Container from "../components/atoms/container"
-import Menu from "../components/organisms/menu"
+import Container from "../components/container"
+import Menu from "../components/menu"
 
 
 class DefaultLayout extends React.Component {
@@ -20,13 +20,13 @@ class DefaultLayout extends React.Component {
           }}
         >
         <Menu items={this.props.data.allTaxonomyTermTags.edges} />
-        <div
-          css={{
-            height: rhythm(1.5),
-            margin: `0 auto`,
-            maxWidth: 1024,
-          }}
-        >
+          <div
+            css={{
+              height: rhythm(1.5),
+              margin: `0 auto`,
+              maxWidth: 1024,
+            }}
+          >
 
 
           </div>

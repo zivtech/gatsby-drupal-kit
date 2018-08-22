@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./node-info.module.scss";
 import Img from "gatsby-image";
-import Container from "../container";
-import { rhythm } from "../../utils/typography"
+import Container from "../../atoms/container";
+import { rhythm } from "../../../utils/typography"
 
 class NodeInfo extends React.Component {
   render() {
