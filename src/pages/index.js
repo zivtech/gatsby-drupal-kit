@@ -36,7 +36,13 @@ export const query = graphql`
   query {
     ...AllPages
     ...AllTags
-    allNodeArticle(limit: 1000) {
+    allNodeArticle(
+      limit: 1000
+      sort: {
+        fields: nid
+        order: DESC
+      }
+    ) {
       edges {
         node {
           ...ArticleNode

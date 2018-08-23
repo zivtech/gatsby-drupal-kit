@@ -27,8 +27,10 @@ const CategoryTemplate = ({ data }) => (
 
 export default CategoryTemplate
 
+// origin of the tid variable 
+// can be found in gatsby-node.js
+// call to create page
 export const query = graphql`
-
   query($tid: Int) {
   ...AllPages
   ...AllTags
@@ -36,18 +38,24 @@ export const query = graphql`
     tid
     name
   }
-   allNodeArticle(filter: {
-    relationships : {
-      field_tags : {
-        tid:{ eq: $tid}
+  allNodeArticle(
+    sort: {
+      fields:nid
+      order: DESC
+    }
+    filter: {
+      relationships : {
+        field_tags : {
+          tid:{ eq: $tid}
+        }
       }
     }
-  })  {
-     edges {
-        node {
-          ...ArticleNode
-        }
-     }
+  ) {
+    edges {
+      node {
+        ...ArticleNode
+      }
+    }
      
     }
   }
