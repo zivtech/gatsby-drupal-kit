@@ -7,7 +7,6 @@ import { rhythm } from "../../../utils/typography"
 
 class FooterLinks extends React.Component {
   render() {
-    console.log(this.props);
     // By Default... we're simply using data from tags taxonomy as the 
     // the main menu
     return (
