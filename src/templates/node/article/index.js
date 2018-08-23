@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import styles from "./article.module.scss"
-import Layout from "../../../layouts"
+import Layout from "../../../components/layouts/default"
 import Container from "../../../components/atoms/container"
 import NodeInfo from "../../../components/molecules/node-info"
 import { rhythm } from "../../../utils/typography"

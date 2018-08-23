@@ -3,7 +3,7 @@ import { Link, graphql} from "gatsby"
 import gray from "gray-percentage"
 import Img from "gatsby-image"
 
-import Layout from "../layouts"
+import Layout from "../components/layouts/default"
 import Container from "../components/atoms/container"
 import Teaser from "../components/organisms/teaser"
 import { rhythm } from "../utils/typography"

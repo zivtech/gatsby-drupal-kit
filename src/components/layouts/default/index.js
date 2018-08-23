@@ -4,11 +4,11 @@ import gray from "gray-percentage"
 
 
 
-import { rhythm, scale } from "../utils/typography"
-import constants from "../utils/constants";
-import Container from "../components/atoms/container"
-import Menu from "../components/organisms/menu"
-import FooterLinks from "../components/organisms/footer-links"
+import { rhythm, scale } from "../../../utils/typography"
+import constants from "../../../utils/constants";
+import Container from "../../../components/atoms/container"
+import Menu from "../../../components/organisms/menu"
+import FooterLinks from "../../../components/organisms/footer-links"
 
 
 class DefaultLayout extends React.Component {
