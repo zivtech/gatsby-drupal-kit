@@ -1,4 +1,5 @@
 
+import { graphql } from 'gatsby'
 
 export const ArticleNode = graphql`
 fragment ArticleNode on node__article { 
@@ -70,29 +71,5 @@ fragment AllPages on Query {
   }
 }
 `;
-
-export const pageQuery = graphql`
-query {
-  allTaxonomyTermTags {
-    edges {
-      node {
-        name
-        tid
-        path {
-          alias
-        }
-      }
-    }
-  }
-  allNodeArticle {
-     edges {
-       node {
-         ...ArticleNode
-       }
-     }
-   }
- }
-`
-
 
 

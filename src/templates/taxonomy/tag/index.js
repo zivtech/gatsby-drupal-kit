@@ -1,11 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
-
 import Layout from "../../../layouts"
 import Container from "../../../components/atoms/container"
 import Teaser from "../../../components/organisms/teaser"
 import { rhythm } from "../../../utils/typography"
 import constants from "../../../utils/constants"
+import { graphql } from 'gatsby'
 
 const CategoryTemplate = ({ data }) => (
   <Layout data={data}>

@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 import styles from "./article.module.scss"
 import Layout from "../../../layouts"
 import Container from "../../../components/atoms/container"
