@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./teaser.module.scss";
 import Img from "gatsby-image";
-import NodeInfo from "../../molecules/NodeInfo";
+import NodeInfo from "../../molecules/node-info";
 import Container from "../../atoms/container";
 import { rhythm } from "../../../utils/typography"
 import { randomBytes } from "crypto";
