@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import Layout from "../../../layouts"
 import Container from "../../../components/atoms/container"
-import NodeInfo from "../../../components/molecules/NodeInfo"
+import NodeInfo from "../../../components/molecules/node-info"
 import { rhythm } from "../../../utils/typography"
 import constants from "../../../utils/constants"
 
