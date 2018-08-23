@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./menu.module.scss";
 import Img from "gatsby-image";
-import Container from "../../atoms/container";
+import Container from "../../common/container";
 import { rhythm } from "../../../utils/typography"
 
 

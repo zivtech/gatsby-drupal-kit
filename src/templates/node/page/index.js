@@ -1,8 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 import Layout from "../../../components/layouts/default"
-import Container from "../../../components/atoms/container"
-import NodeInfo from "../../../components/molecules/node-info"
+import Container from "../../../components/common/container"
+import NodeInfo from "../../../components/content/node-info"
 import { rhythm } from "../../../utils/typography"
 import constants from "../../../utils/constants"
 import { graphql } from 'gatsby'

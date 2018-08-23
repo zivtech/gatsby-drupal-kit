@@ -6,7 +6,8 @@ import gray from "gray-percentage"
 
 import { rhythm, scale } from "../../../utils/typography"
 import constants from "../../../utils/constants";
-import Container from "../../../components/atoms/container"
+import Container from "../../../components/common/container"
+import Header from "../global/header"
 import Menu from "../../../components/organisms/menu"
 import FooterLinks from "../../../components/organisms/footer-links"
 
