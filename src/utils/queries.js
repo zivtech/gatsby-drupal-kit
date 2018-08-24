@@ -4,41 +4,42 @@ import { graphql } from 'gatsby'
 export const ArticleNode = graphql`
 fragment ArticleNode on node__article { 
   title
-      body {
-        value
-      }
-      nid
+  body {
+    value
+  }
+  nid
+  path {
+    alias
+  }
+  fields {
+    slug
+  }
+  relationships {
+    field_tags {
+      name
+      tid
       path {
         alias
       }
-      fields {
-        slug
-      }
-      relationships {
-        field_tags {
-          name
-          path {
-            alias
+    }
+    field_image {
+      localFile {
+        childImageSharp {
+          fluid(maxWidth: 1028, maxHeight: 800) {
+            tracedSVG
+            aspectRatio
+            src
+            srcSet
+            sizes
           }
-        }
-        field_image {
-          localFile {
-            childImageSharp {
-                  fluid(maxWidth: 470, maxHeight: 353) {
-                    tracedSVG
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                  resolutions {
-                    width
-                    height
-                  }
-                }
+          resolutions {
+            width
+            height
           }
         }
       }
+    }
+  }
 }
 `;
 
