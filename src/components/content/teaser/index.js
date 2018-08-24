@@ -9,12 +9,7 @@ import { randomBytes } from "crypto";
 class Teaser extends React.Component {
   render() {
     return (
-      <div
-        css={{
-          margin: '1em 0',
-          marginBottom: rhythm(2),
-          clear: 'both'
-        }} className={styles.teaser}>
+      <Container className={styles.teaser} paddingBottom={0} paddingTop={rhythm(1 / 2)}>
         <div className={styles.imageWrapper}>
           <Img
             fluid={
@@ -27,9 +22,9 @@ class Teaser extends React.Component {
           node={this.props.node}
         />
         <div>
-          {this.props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 250) + "..."};
+          {this.props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 250) + "..."}
         </div>
-      </div>
+      </Container>
     )
   }
 }

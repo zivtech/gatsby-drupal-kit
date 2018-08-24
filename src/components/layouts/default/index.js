@@ -8,31 +8,16 @@ import { rhythm, scale } from "../../../utils/typography"
 import constants from "../../../utils/constants";
 import Container from "../../../components/common/container"
 import Header from "../global/header"
+import Footer from "../global/footer"
 import Menu from "../../../components/organisms/menu"
-import FooterLinks from "../../../components/organisms/footer-links"
+
 
 
 class DefaultLayout extends React.Component {
   render() {
     return (
       <div>
-        <header
-          css={{
-            background: constants.paleYellow,
-          }}
-        >
-        <Menu items={this.props.data.allTaxonomyTermTags.edges} />
-        <div
-          css={{
-            height: rhythm(1.5),
-            margin: `0 auto`,
-            maxWidth: 1024,
-          }}
-        >
-
-
-          </div>
-        </header>
+        <Header items={this.props.data.allTaxonomyTermTags.edges} />
         <Container paddingBottom={0} paddingTop={rhythm(1 / 2)}>
 
           <div css={{ width: 193, overflow: `hidden` }}>
@@ -65,29 +50,7 @@ class DefaultLayout extends React.Component {
           </div>
         </Container>
         {this.props.children}
-        <footer css={{ background: constants.paleYellow }}>
-          <Container>
-            <div css={{ maxWidth: `50%`, float: `left` }}>
-              <p>
-                <strong>Drupal Gatsby</strong>
-              </p>
-              <p>
-                Read the{` `}
-                <a href="https://github.com/zivtech/gatsby-drupal8">
-                  source for this website.
-                </a>
-              </p>
-              <p><a href="http://dev-drupal-gatsby.pantheonsite.io">Drupal 8 source site</a></p>
-            </div>
-            <div
-              css={{ float: `right`, maxWidth: `50%`, paddingLeft: rhythm(1) }}
-            >
-              <FooterLinks items={this.props.data.allNodePage.edges} /> 
-              <br />
-              Copyright {new Date().getFullYear()} Terms & Conditions
-            </div>
-          </Container>
-        </footer>
+        <Footer items={this.props.data.allNodePage.edges} /> 
       </div>
     )
   }

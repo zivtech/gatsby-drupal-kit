@@ -7,6 +7,7 @@ fragment ArticleNode on node__article {
       body {
         value
       }
+      nid
       path {
         alias
       }
