@@ -19,6 +19,7 @@ class Teaser extends React.Component {
         </div>
         <h3><a href={this.props.path}>{this.props.title}</a></h3>
         <NodeInfo 
+
           node={this.props.node}
         />
         <div>

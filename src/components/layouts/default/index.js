@@ -9,7 +9,6 @@ import constants from "../../../utils/constants";
 import Container from "../../../components/common/container"
 import Header from "../global/header"
 import Footer from "../global/footer"
-import Menu from "../../../components/organisms/menu"
 
 
 
