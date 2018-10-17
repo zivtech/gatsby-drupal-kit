@@ -10,10 +10,11 @@ import Featured from "../components/content/featured"
 import { rhythm } from "../utils/typography"
 import constants from "../utils/constants"
 import queries from "../utils/queries"
-
+import StaticComponent from "../examples/example-static.js"
 const IndexPage = ({ data }) => (
   
   <Layout data={data}>
+    <StaticComponent />
     <Container>
       {data.featuredArticle.edges.map(({ node }) => (
 
