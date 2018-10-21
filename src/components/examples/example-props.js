@@ -2,7 +2,7 @@ import React from "react"
 
 const ExampleProps = props => {
   return ( 
-    <div class="yes">
+    <div>
       <h1>{props.greeting}, {props.name}</h1>
       <div>{props.message}</div>
     </div>

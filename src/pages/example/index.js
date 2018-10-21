@@ -1,31 +1,35 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import gray from "gray-percentage"
-import Img from "gatsby-image"
+import {graphql} from "gatsby"
+import StaticComponent from "../../components/examples/example-static.js"
+import StaticProps from "../../components/examples/example-props.js"
+import ExampleWrapper from "../../components/examples/example-wrapper.js"
+import ExampleStateful from "../../components/examples/example-stateful.js"
+import ExampleStyledComponent from "../../components/examples/example-styled-component.js"
+import styled from "styled-components"
 
-import Layout from "../../components/layouts/default"
-import Container from "../../components/common/container"
-import Teaser from "../../components/content/teaser"
-import Featured from "../../components/content/featured"
-import { rhythm } from "../../utils/typography"
-import constants from "../../utils/constants"
-import queries from "../../utils/queries"
-import StaticComponent from "../../examples/example-static.js"
-import StaticProps from "../../examples/example-props.js"
-import ExampleWrapper from "../../examples/example-wrapper.js"
-import ExampleStateful from "../../examples/example-stateful.js"
+const ExamplePageWrapper = styled.div`
+  padding:4em;
+`
 const ExamplePage = ({ data }) => (
-  
-  <Layout data={data}>
-    <StaticComponent />
-    <StaticProps name="dude" greeting="Yo" message="Chillin, and stuff" />
-    <ExampleWrapper>
+  <ExamplePageWrapper>
+    <ExampleWrapper title="example-static.js - This component does not change ever.">
+      <StaticComponent />
+    </ExampleWrapper>
+    <ExampleWrapper title="example-props.js instance 1 - This component has properties passed in.">
+      <StaticProps name="dude" greeting="Yo" message="Chillin, and stuff" />
+    </ExampleWrapper>
+    <ExampleWrapper title="example-props.js instance 2 - name, greeting, message change. Still same component">
       <StaticProps name="Friend" greeting="We are wrapping." message="Chillin, and stuff" />
     </ExampleWrapper>
-    <ExampleWrapper>
+    <ExampleWrapper title="example-stateful.js - This has a dumb button that will increment up when clicked">
       <ExampleStateful name="Friend" greeting="We are wrapping." message="Chillin, and stuff" />
     </ExampleWrapper>
-  </Layout>
+    <ExampleWrapper title="example-styled-component.js One ugly ass example wrapper using styled components">
+      <ExampleStyledComponent title="Web design shall be impactful">
+        <p>And Robust!</p>
+      </ExampleStyledComponent>
+    </ExampleWrapper>
+  </ExamplePageWrapper>
 )
 
 export default ExamplePage
