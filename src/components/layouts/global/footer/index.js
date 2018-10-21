@@ -5,9 +5,7 @@ import Container from "../../../common/container";
 import { rhythm } from "../../../../utils/typography"
 import constants from "../../../../utils/constants"
 
-
-class FooterLinks extends React.Component {
-  render() {
+const FooterLinks = props => {
     return (
       <footer css={{ background: constants.paleYellow }}>
         <Container>
@@ -28,8 +26,8 @@ class FooterLinks extends React.Component {
           >
             <div className={styles.footerLinks}>
               <ul>
-                {this.props.items &&
-                  this.props.items.map(ing => <li key={ing.node.path.alias}><a href={ing.node.path.alias}> {ing.node.title}</a></li>)}
+                {props.items &&
+                  props.items.map(ing => <li key={ing.node.path.alias}><a href={ing.node.path.alias}> {ing.node.title}</a></li>)}
               </ul>
             </div>
             <br />
@@ -38,7 +36,6 @@ class FooterLinks extends React.Component {
         </Container>
       </footer>
     )
-  }
 }
 
 export default FooterLinks;

@@ -14,10 +14,8 @@ import StaticComponent from "../examples/example-static.js"
 const IndexPage = ({ data }) => (
   
   <Layout data={data}>
-    <StaticComponent />
     <Container>
       {data.featuredArticle.edges.map(({ node }) => (
-
       <Featured
         key={node.nid}
         image={node.relationships.field_image.localFile.childImageSharp.fluid} title={node.title}

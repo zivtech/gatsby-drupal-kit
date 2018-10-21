@@ -33,7 +33,7 @@ const ArticleTemplate = ({ data }) => (
         
           <div css={{ display: `flex`, justifyContent: `space-between` }}>
 
-          <div dangerouslySetInnerHTML={{__html: data.nodeArticle.body.value }} />
+          <div dangerouslySetInnerHTML={{__html: data.nodeArticle.body.processed }} />
           </div>
           <NodeInfo 
             node={data.nodeArticle}

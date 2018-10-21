@@ -14,7 +14,6 @@ class ExampleStateful extends React.Component {
     this.setState(state => ({
       clickcount: state.clickcount + 1
     }));
-    console.log(this.state);
   }
 
   render() {

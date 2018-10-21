@@ -5,6 +5,7 @@ export const ArticleNode = graphql`
 fragment ArticleNode on node__article { 
   title
   body {
+    processed
     value
   }
   nid

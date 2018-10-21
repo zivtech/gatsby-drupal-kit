@@ -6,28 +6,25 @@ import Container from "../../common/container";
 import { rhythm } from "../../../utils/typography"
 import { randomBytes } from "crypto";
 
-class Teaser extends React.Component {
-  render() {
-    return (
-      <Container className={styles.teaser} paddingBottom={0} paddingTop={rhythm(1 / 2)}>
-        <div className={styles.imageWrapper}>
-          <Img
-            fluid={
-              this.props.image
-            }
-          />
-        </div>
-        <h3><a href={this.props.path}>{this.props.title}</a></h3>
-        <NodeInfo 
-
-          node={this.props.node}
+const Teaser = props => {
+  return (
+    <Container className={styles.teaser} paddingBottom={0} paddingTop={rhythm(1 / 2)}>
+      <div className={styles.imageWrapper}>
+        <Img
+          fluid={
+            props.image
+          }
         />
-        <div>
-          {this.props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 250) + "..."}
-        </div>
-      </Container>
-    )
-  }
+      </div>
+      <h3><a href={props.path}>{props.title}</a></h3>
+      <NodeInfo 
+        node={props.node}
+      />
+      <div>
+        {props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 250) + "..."}
+      </div>
+    </Container>
+  )
 }
 
 export default Teaser;

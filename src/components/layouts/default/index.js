@@ -1,22 +1,15 @@
 import React from "react"
-import { Link} from "gatsby"
 import gray from "gray-percentage"
-
-
-
 import { rhythm, scale } from "../../../utils/typography"
-import constants from "../../../utils/constants";
 import Container from "../../../components/common/container"
 import Header from "../global/header"
 import Footer from "../global/footer"
 
 
-
-class DefaultLayout extends React.Component {
-  render() {
+const DefaultLayout = props => {
     return (
       <div>
-        <Header items={this.props.data.allTaxonomyTermTags.edges} />
+        <Header items={props.data.allTaxonomyTermTags.edges} />
         <Container paddingBottom={0} paddingTop={rhythm(1 / 2)}>
 
           <div css={{ width: 193, overflow: `hidden` }}>
@@ -48,11 +41,11 @@ class DefaultLayout extends React.Component {
 
           </div>
         </Container>
-        {this.props.children}
-        <Footer items={this.props.data.allNodePage.edges} /> 
+        {props.children}
+        <Footer items={props.data.allNodePage.edges} /> 
       </div>
     )
-  }
 }
 
 export default DefaultLayout
+
