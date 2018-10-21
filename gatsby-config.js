@@ -18,6 +18,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+            
+
+              ignoreFileExtensions: [],
+
+            },
+
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -57,6 +67,7 @@ module.exports = {
         icon: `src/assets/feed-icon.png`,
       },
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,

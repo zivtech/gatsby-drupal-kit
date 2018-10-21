@@ -1,10 +1,20 @@
 const path = require(`path`)
 
+
 // Create a slug for each recipe and set it as a field on the node.
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   const slug = 'articles/' + node.nid;
+    // Conditionals, etc. can be used here, but I omitted those just for example's sake.
+ /* if(node.body.processed) {
+  const markdown = node.body.processed;
+  node.body.markdown = remark()
+    .use(remarkHTML)
+    .processSync(markdown)
+    .toString();
+  }
+  */
   createNodeField({
     node,
     name: `slug`,
@@ -46,6 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
                 }
                 body {
                   value
+                  processed
                 }
                 fields {
                   slug
@@ -63,6 +74,7 @@ exports.createPages = ({ actions, graphql }) => {
                  }
                  body {
                    value
+                   processed
                  }
                  fields {
                    slug
@@ -81,10 +93,7 @@ exports.createPages = ({ actions, graphql }) => {
   
           createPage({
             path: node.path.alias,
-            component: pageTemplate,
-            context: {
-              slug: node.fields.slug
-            },
+            component: pageTemplate
           })
         })
         result.data.allNodeArticle.edges.forEach(({ node }) => {
