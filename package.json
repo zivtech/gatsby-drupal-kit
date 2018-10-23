@@ -13,6 +13,7 @@
     "gatsby-image": "next",
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",
