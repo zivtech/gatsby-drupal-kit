@@ -1,10 +1,7 @@
 import React from "react"
-import gray from "gray-percentage"
-import { rhythm, scale } from "../../../utils/typography"
 import Header from "../global/header"
 import Footer from "../global/footer"
 import styled from "styled-components"
-import Container from "../../../components/common/container"
 
 const PageWrapper = styled.div`
   margin: 3rem auto;
@@ -13,6 +10,8 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding:1em;
+  background-color:#eee;
 `
 
 const DefaultLayout = props => {

@@ -7,10 +7,7 @@ import Layout from "../components/layouts/default"
 import Container from "../components/common/container"
 import Teaser from "../components/content/teaser"
 import Featured from "../components/content/featured"
-import { rhythm } from "../utils/typography"
-import constants from "../utils/constants"
-import queries from "../utils/queries"
-import StaticComponent from "../examples/example-static.js"
+
 const IndexPage = ({ data }) => (
   
   <Layout data={data}>

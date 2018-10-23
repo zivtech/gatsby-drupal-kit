@@ -6,7 +6,7 @@ import {
 } from "typography-breakpoint-constants"
 import moragaTheme from 'typography-theme-moraga'
 moragaTheme.baseFontSize = "14px"
-console.log(moragaTheme);
+
 const typography = new Typography(moragaTheme)
 
 // Hot reload typography in development.

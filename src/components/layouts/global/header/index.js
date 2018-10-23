@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./header.module.scss";
-import { rhythm } from "../../../../utils/typography"
 import styled from "styled-components"
+
+// These style components create HTML elements with a autogenerate class
+// styles are not inline, they end up in a seperate CSS file
+// We aren't barbarians! 
 const HeaderWrapper = styled.div`
 
-  margin: 0 auto 12px auto;
 
 `
 const Logo = styled.h1`
@@ -22,12 +23,14 @@ const MenuListItem = styled.li`
   float:left;
   list-style:none;
   font-size:1.5em;
-  margin:0px 1em;
+  margin:0 1em 0 1em;
 `
+
 const Header = props => { 
   // By Default... we're simply using data from tags taxonomy as the 
   // the main menu
   return (
+    // Generic Div defined by styled component above
     <HeaderWrapper>
       <Logo>
         Drupal Gatsby Kit
