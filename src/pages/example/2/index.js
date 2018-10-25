@@ -6,8 +6,8 @@ import Helmet from 'react-helmet'
 const ExampleMarkupBarf = (props) => {
   return (
     <div>
-      <h1>The Audience Isn't Impressed</h1>
-      <p>...but don't worry... this is just the basic component</p>
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
     </div>
   )
 }
@@ -16,14 +16,14 @@ const ExampleMarkupBarf = (props) => {
 const Example2 = (props) => {
   return (
     <div>
-      <Helmet title="Example 3" />
+      <Helmet title="Now with custom components" />
       <ExampleMarkupBarf 
         title="The Audience Isn't Impressed" 
         subtitle="...but don't worry... this is just the basic component" 
       />
       <ExampleMarkupBarf
-        title="But maybe they think this is cooler?" 
-        subtitle="Though this isn't the cool part yet..."
+        title="But maybe they think this is getting cooler?" 
+        subtitle="this is hardly cool compared to other stuff."
       />
     </div>
   )
