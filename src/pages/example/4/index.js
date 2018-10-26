@@ -1,10 +1,10 @@
 
 import React from "react"
 import Helmet from 'react-helmet'
-import Layout from "../../../components/examples/layout/1"
+import Layout from "../../../components/examples/layout/2"
 import ExampleMarkupBarf from "../../../components/examples/example-markup-barf.js"
 
-const Example3 = (props) => {
+const Example4 = (props) => {
   return (
     <Layout>
       <Helmet title="Example 3" />
@@ -14,4 +14,4 @@ const Example3 = (props) => {
   )
 }
 
-export default Example3
+export default Example4

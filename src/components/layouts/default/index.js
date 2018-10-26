@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding:1em;
-  background-color:#eee;
+  background-color:
 `
 
 const DefaultLayout = props => {

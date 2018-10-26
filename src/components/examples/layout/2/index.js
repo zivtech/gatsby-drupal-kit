@@ -2,23 +2,26 @@ import React from "react"
 import styled from "styled-components"
 
 const LayoutWrapper = styled.div`
-  .header {
-    background-color: #000;
-    h1 {
-      font-size:2em; 
-      text-align center;
-    }
-  }
-`
+  margin:0 px;
 
+  background:white;
+`;
+
+const HeaderWrapper = styled.h1`
+  margin:0 px;
+  background:gold;
+
+`;
 
 export default ({ children }) => 
   <LayoutWrapper>
-    <div class="header">
+    <HeaderWrapper>
       <h1>The BEST site</h1>
-    </div>
+    </HeaderWrapper>
     <div className="content">{children}</div>
     <div className="footer">
-      Fake. copyright Me. All this content is awesome and mine.
+      All this content is awesome and mine.
     </div>
   </LayoutWrapper>
+
+

@@ -35,10 +35,10 @@ const PageTemplate = ({ data }) => (
 export default PageTemplate
 
 export const query = graphql`
-  query($slug: String!) {
+  query($nid: Int!) {
     ...AllTags
     ...AllPages
-    nodePage(fields: { slug: { eq: $slug } }) {
+    nodePage(nid: { eq: $nid }) {
       title
       body {
         value

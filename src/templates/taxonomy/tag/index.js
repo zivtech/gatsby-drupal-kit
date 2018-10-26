@@ -8,7 +8,6 @@ const CategoryTemplate = ({ data }) => (
   <Layout data={data}>
     <Container>
       <h1>{data.taxonomyTermTags.name}</h1>
-
         {data.allNodeArticle.edges.map(({ node }) => (
             <Teaser 
               key={node.nid}

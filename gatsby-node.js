@@ -6,21 +6,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   const slug = 'articles/' + node.nid;
-    // Conditionals, etc. can be used here, but I omitted those just for example's sake.
- /* if(node.body.processed) {
-  const markdown = node.body.processed;
-  node.body.markdown = remark()
-    .use(remarkHTML)
-    .processSync(markdown)
-    .toString();
-  }
-  */
   createNodeField({
     node,
     name: `slug`,
     value: slug,
   })
-
 }
 
 // Implement the Gatsby API “createPages”. This is called once the
@@ -90,10 +80,12 @@ exports.createPages = ({ actions, graphql }) => {
         }
         // pages for each article.
         result.data.allNodePage.edges.forEach(({ node }) => {
-  
           createPage({
             path: node.path.alias,
-            component: pageTemplate
+            component: pageTemplate,
+            context: {
+              nid: node.nid
+            },
           })
         })
         result.data.allNodeArticle.edges.forEach(({ node }) => {
