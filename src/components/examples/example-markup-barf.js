@@ -4,8 +4,8 @@ import React from "react"
 const ExampleMarkupBarf = (props) => {
   return (
     <div>
-      <h1>The Audience Isn't Impressed</h1>
-      <p>...but don't worry... this is just the basic component</p>
+      <h1>{props.title}</h1>
+      <p>{props.body}</p>
     </div>
   )
 }

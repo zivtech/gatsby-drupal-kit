@@ -5,13 +5,14 @@ import Helmet from 'react-helmet'
 import Layout from "../../../components/examples/layout/2"
 import ExampleMarkupBarf from "../../../components/examples/example-markup-barf.js"
 
-const Example5 = (props) => {
-  console.log(props)
+const Example5 = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Example 3" />
-      <ExampleMarkupBarf title="But is this that cool?" subtitle="I think so..."  />
-      <ExampleMarkupBarf title="Why are we handling content in react?" subtitle="we'll get to that later..."  />
+        {data.allNodeArticle.edges.map(({ node }) => (
+          <ExampleMarkupBarf title={node.title} subtitle="I think so..."  />
+      
+        ))}
     </Layout>
   )
 }

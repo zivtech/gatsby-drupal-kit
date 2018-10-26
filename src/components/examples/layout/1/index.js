@@ -2,7 +2,7 @@ import React from "react"
 
 export default ({ children }) => 
   <div className="wrapper">
-    <div class="header">
+    <div className="header">
       <h1>The BEST site</h1>
     </div>
     <div className="content">{children}</div>

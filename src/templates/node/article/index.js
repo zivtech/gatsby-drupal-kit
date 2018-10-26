@@ -47,10 +47,10 @@ const ArticleTemplate = ({ data }) => (
 export default ArticleTemplate
 
 export const query = graphql`
-  query($slug: String!) {
+  query($nid: Int!) {
     ...AllTags
     ...AllPages
-    nodeArticle(fields: { slug: { eq: $slug } }) {
+    nodeArticle(nid: { eq: $nid } ) {
       ...ArticleNode
     }
   }

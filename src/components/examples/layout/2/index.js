@@ -3,12 +3,14 @@ import styled from "styled-components"
 
 const LayoutWrapper = styled.div`
   margin:0 px;
-  background:gold;
+
+  background:white;
 `;
 
 const HeaderWrapper = styled.h1`
   margin:0 px;
   background:gold;
+
 `;
 
 export default ({ children }) => 

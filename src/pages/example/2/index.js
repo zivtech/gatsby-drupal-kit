@@ -8,6 +8,7 @@ const ExampleMarkupBarf = (props) => {
     <div>
       <h1>{props.title}</h1>
       <p>{props.subtitle}</p>
+      {props.children}
     </div>
   )
 }
@@ -20,7 +21,16 @@ const Example2 = (props) => {
       <ExampleMarkupBarf 
         title="The Audience Isn't Impressed" 
         subtitle="...but don't worry... this is just the basic component" 
+      >
+            <ExampleMarkupBarf
+        title="But maybe they think this is getting cooler?" 
+        subtitle="this is hardly cool compared to other stuff."
       />
+            <ExampleMarkupBarf
+        title="But maybe they think this is getting cooler?" 
+        subtitle="this is hardly cool compared to other stuff."
+      />
+      </ExampleMarkupBarf>
       <ExampleMarkupBarf
         title="But maybe they think this is getting cooler?" 
         subtitle="this is hardly cool compared to other stuff."
