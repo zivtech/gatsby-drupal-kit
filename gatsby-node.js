@@ -93,7 +93,7 @@ exports.createPages = ({ actions, graphql }) => {
             path: node.path.alias,
             component: articleTemplate,
             context: {
-              slug: node.fields.slug
+              nid: node.nid
             },
           })
         })
