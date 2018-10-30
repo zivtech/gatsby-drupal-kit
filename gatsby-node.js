@@ -41,6 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
             edges {
               node {
                 title
+                nid
                 path {
                   alias
                 }
@@ -93,7 +94,7 @@ exports.createPages = ({ actions, graphql }) => {
             path: node.path.alias,
             component: articleTemplate,
             context: {
-              slug: node.fields.slug
+              nid: node.nid
             },
           })
         })
