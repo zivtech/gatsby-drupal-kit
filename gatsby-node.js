@@ -41,6 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
             edges {
               node {
                 title
+                nid
                 path {
                   alias
                 }
