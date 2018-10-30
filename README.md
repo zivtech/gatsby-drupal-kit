@@ -13,7 +13,7 @@ Gatsby site: https://clever-gates-db60f2.netlify.com/
 ## Drupal 8 setup 
 1. You'll need drupal to be hosted remotely, and be accessible via the web. I'd recommend setting up a free https://pantheon.io/register drupal 8 site for testing this if want to save time! 
 3. Install a standard profile
-4. Download and enable: webhook, ctools, token, pathauto, and jsonapi. 
+4. Download and enable: [webhooks](https://www.drupal.org/project/webhooks), [ctools](https://www.drupal.org/project/ctools), [token](https://www.drupal.org/project/token), [pathauto](https://www.drupal.org/project/pathauto), and [jsonapi](https://www.drupal.org/project/jsonapi). 
 6. *IMPORTANT* Disable the contact form module (long story...)
 7. Configure "anonymous" role to have access to jsonapi in the permissions page. 
 8. Configure automatic paths for taxonomy term tags, and articles (otherwise, just be sure to give your tags and articles url aliases). 
