@@ -20,7 +20,7 @@ Gatsby site: https://clever-gates-db60f2.netlify.com/
 9. Create an article that includes an image, and a tag. 
 
 ## Connect the sites 
-1. At the root of the gatsby repo, edit "gatsby-node.js" 
+1. At the root of the gatsby repo, edit "gatsby-config.js" 
 2. Replace "http://dev-drupal-gatsby.pantheonsite.io/" with your site's publically accessible url. 
 
 ## Setup a live CI enviroment 
