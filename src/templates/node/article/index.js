@@ -18,7 +18,6 @@ const ArticleTemplate = ({ data }) => (
         marginBottom: rhythm(3),
       }}
     >
-      <Container>
         <h1>{data.nodeArticle.title}</h1>
         <Img
               fluid={
@@ -38,7 +37,6 @@ const ArticleTemplate = ({ data }) => (
             node={data.nodeArticle}
           />
         </div>
-      </Container>
     </div>
   </Layout>
 )
