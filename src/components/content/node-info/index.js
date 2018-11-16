@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "./node-info.module.scss";
-import Img from "gatsby-image";
-import Container from "../../common/container";
-import { rhythm } from "../../../utils/typography"
 
 const NodeInfo = props => {
   return (
