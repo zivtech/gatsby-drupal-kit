@@ -2,8 +2,10 @@ import React from "react";
 import Img from "gatsby-image";
 import NodeInfo from "../../content/node-info";
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const FeaturedContainer = styled.div`
+  clear:both;
   margin:1em 0;
 `
 const FeaturedImage = styled(Img)`
@@ -11,6 +13,10 @@ const FeaturedImage = styled(Img)`
   width:500px;
   float:left;
 `
+const FeaturedHeadline = styled.h2`
+  font-size:3em;
+`
+
 const Featured = props => {
   return (
     <FeaturedContainer>
@@ -19,12 +25,12 @@ const Featured = props => {
           props.image
         }
       />
-      <h3><a href={props.path}>{props.title}</a></h3>
+      <FeaturedHeadline><Link to={props.path}>{props.title}</Link></FeaturedHeadline>
       <NodeInfo 
         node={props.node}
       />
       <div>
-        {props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 899) + "..."}
+        {props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 400) + "..."}
       </div>
     </FeaturedContainer>
   )

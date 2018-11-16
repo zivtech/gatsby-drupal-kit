@@ -1,16 +1,26 @@
 import React from "react";
-import styles from "./node-info.module.scss";
+import styled from "styled-components";
+import { Link } from "gatsby";
+
+const NodeInfoContainer = styled.div`
+  margin-bottom: 1em;
+`;
 
 const NodeInfo = props => {
   return (
-    <div className={styles.nodeInfo}>
-      <div className={styles.byline}>By Dr. Billy Wayne Ruddick</div>
-      <div className={styles.categories}>Filed under:
+    <NodeInfoContainer>
+      By Dr. Billy Wayne Ruddick | Filed under:
+      <span classname="tags">
         {props.node.relationships &&
-          props.node.relationships.field_tags.map(ing => <a key={ing.path.alias} className={styles.tag} href={ing.path.alias}> {ing.name} </a>)}
-      </div>
-    </div>
-  )
-}
+          props.node.relationships.field_tags.map(ing => (
+            <Link key={ing.path.alias} to={ing.path.alias}>
+              {" "}
+              {ing.name}{" "}
+            </Link>
+          ))}
+      </span>
+    </NodeInfoContainer>
+  );
+};
 
 export default NodeInfo;

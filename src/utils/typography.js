@@ -1,5 +1,4 @@
 import Typography from "typography"
-import gray from "gray-percentage"
 import {
   MOBILE_MEDIA_QUERY,
   TABLET_MEDIA_QUERY,

@@ -1,46 +1,66 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 // These style components create HTML elements with a autogenerate class
 // styles are not inline, they end up in a seperate CSS file
-// We aren't barbarians! 
+// We aren't barbarians!
 const FooterWrapper = styled.div`
-width:100%;
-`
-const Logo = styled.h1`
-  font-size:4em;
-  text-align:center;
-`
-
+  background-color: #eee;
+  padding: 2em 3em;
+  justify-content: center;
+  text-align: center;
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .info {
+    text-align: left;
+  }
+`;
 const FooterList = styled.ul`
-  text-align:center;
-  clear:both;
-  margin:0 auto;
-  float:right;
-`
+  float: right;
+`;
 
 const FooterListItem = styled.li`
-  float:left;
-  list-style:none;
-  font-size:1.5em;
-  margin:0 1em 0 1em;
-`
+  float: left;
+  list-style: none;
+  font-size: 1.5em;
+  margin: 0 0em 0 2em;
+`;
 
 const FooterLinks = props => {
   return (
     <FooterWrapper>
-      <FooterList>
-        {props.items && props.items.map( ing => 
-          <FooterListItem key={ing.node.path.alias}>
-            <a href={ing.node.path.alias}>{ing.node.title}</a>
-          </FooterListItem>
-        )}
-      </FooterList>
-      <p><strong>Drupal Gatsby</strong></p>
-      <p>Read the <a href="https://github.com/zivtech/gatsby-drupal8"> source for this website.</a></p>
-      <p><a href="http://dev-drupal-gatsby.pantheonsite.io">Drupal 8 source site</a></p>
+      <div class="content">
+        <FooterList>
+          {props.items &&
+            props.items.map(ing => (
+              <FooterListItem key={ing.node.path.alias}>
+                <Link to={ing.node.path.alias}>{ing.node.title}</Link>
+              </FooterListItem>
+            ))}
+        </FooterList>
+        <div class="info">
+          <p>
+            <strong>Drupal Gatsby</strong>
+          </p>
+          <p>
+            Read the{" "}
+            <Link to="https://github.com/zivtech/gatsby-drupal8">
+              {" "}
+              source for this website.
+            </Link>
+          </p>
+          <p>
+            <Link to="http://dev-drupal-gatsby.pantheonsite.io">
+              Drupal 8 source site
+            </Link>
+          </p>
+        </div>
+      </div>
     </FooterWrapper>
-  )
-}
+  );
+};
 
 export default FooterLinks;

@@ -1,19 +1,20 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import gray from "gray-percentage";
-import Img from "gatsby-image";
-
+import {graphql } from "gatsby";
+import {Helmet} from "react-helmet";
 import Layout from "../components/layouts/default";
 import Teaser from "../components/content/teaser";
 import Featured from "../components/content/featured";
 
 const IndexPage = ({ data }) => (
   <Layout data={data}>
+    <Helmet
+      title="This is here Helmet elment is your <title> attribute!"
+    />
     {data.featuredArticle.edges.map(({ node }) => (
       <Featured
         key={node.nid}
         image={node.relationships.field_image.localFile.childImageSharp.fluid}
-        title={node.title}ß
+        title={node.title}
         path={node.path.alias}
         node={node}
         content={node.body.value}
