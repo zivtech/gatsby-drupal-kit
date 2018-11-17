@@ -1,30 +1,34 @@
 import React from "react";
-import styles from "./teaser.module.scss";
+import styled from "styled-components";
 import Img from "gatsby-image";
 import NodeInfo from "../../content/node-info";
-import Container from "../../common/container";
-import { rhythm } from "../../../utils/typography"
-import { randomBytes } from "crypto";
+import { Link } from "gatsby";
+
+const TeaserContainer = styled.div`
+  clear:both;
+  margin:2eml
+  min-height:180px;
+  padding:1em 0;
+`;
+const TeaserImage = styled(Img)`
+  margin-right: 1em;
+  float: left;
+  width: 200px;
+`;
 
 const Teaser = props => {
   return (
-    <Container className={styles.teaser} paddingBottom={0} paddingTop={rhythm(1 / 2)}>
-      <div className={styles.imageWrapper}>
-        <Img
-          fluid={
-            props.image
-          }
-        />
-      </div>
-      <h3><a href={props.path}>{props.title}</a></h3>
-      <NodeInfo 
-        node={props.node}
-      />
+    <TeaserContainer>
+      <TeaserImage fluid={props.image} />
+      <h3>
+        <Link to={props.path}>{props.title}</Link>
+      </h3>
+      <NodeInfo node={props.node} />
       <div>
-        {props.content.replace(/(<([^>]+)>)/ig, "").substring(0, 250) + "..."}
+        {props.content.replace(/(<([^>]+)>)/gi, "").substring(0, 200) + "..."}
       </div>
-    </Container>
-  )
-}
+    </TeaserContainer>
+  );
+};
 
 export default Teaser;

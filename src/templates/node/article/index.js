@@ -1,56 +1,43 @@
-import React from "react"
-import Img from "gatsby-image"
-import { graphql } from 'gatsby'
-import styles from "./article.module.scss"
-import Layout from "../../../components/layouts/default"
-import Container from "../../../components/common/container"
-import NodeInfo from "../../../components/content/node-info"
-import { rhythm } from "../../../utils/typography"
-import constants from "../../../utils/constants"
+import React from "react";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
+import {Helmet} from "react-helmet";
+import Layout from "../../../components/layouts/default";
+import NodeInfo from "../../../components/content/node-info";
+import styled from "styled-components";
+
+const MainImage = styled(Img)`
+  margin-bottom:1em;
+`;
 
 const ArticleTemplate = ({ data }) => (
   <Layout data={data}>
+    <Helmet
+      title={data.nodeArticle.title}
+    />
+    <h1>{data.nodeArticle.title}</h1>
+    <MainImage
+      fluid={
+        data.nodeArticle.relationships.field_image.localFile.childImageSharp
+          .fluid
+      }
+    />
     <div
-      className={styles.article}
-      css={{
-        background: constants.paleYellow,
-        padding: rhythm(1.5),
-        paddingTop: 0,
-        marginBottom: rhythm(3),
+      dangerouslySetInnerHTML={{
+        __html: data.nodeArticle.body.processed
       }}
-    >
-      <Container>
-        <h1>{data.nodeArticle.title}</h1>
-        <Img
-              fluid={
-                data.nodeArticle.relationships.field_image.localFile.childImageSharp.fluid
-              }
-/>
-
-     
-  
-        <div css={{ background: `white`, padding: rhythm(1.5) }}>
-        
-          <div css={{ display: `flex`, justifyContent: `space-between` }}>
-
-          <div dangerouslySetInnerHTML={{__html: data.nodeArticle.body.processed }} />
-          </div>
-          <NodeInfo 
-            node={data.nodeArticle}
-          />
-        </div>
-      </Container>
-    </div>
+    />
+    <NodeInfo node={data.nodeArticle} />
   </Layout>
-)
+);
 
-export default ArticleTemplate
+export default ArticleTemplate;
 
 export const query = graphql`
   query($nid: Int!) {
     ...AllTags
     ...AllPages
-    nodeArticle(nid: { eq: $nid } ) {
+    nodeArticle(nid: { eq: $nid }) {
       ...ArticleNode
     }
   }

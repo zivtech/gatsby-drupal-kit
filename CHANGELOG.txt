@@ -1,0 +1,8 @@
+CHANGELOG.txt
+Version 0.1 
+-Standardize using styled components
+-Proper support for meta tags via react helmet
+-Cleanup of junk left over from "some experiments" 
+-Proper use of gatsby link elements 
+-Simplifying compontents, styles 
+-Removing unused libraries
