@@ -32,7 +32,7 @@ Gatsby site: https://master--clever-gates-db60f2.netlify.com/
 
 By this point your netlify gatsby site will auto-update anytime you *push to master branch*, or *update content* in drupal. When working locally, you'll have to shut down "gatsby develop" and restart it for content changes to take effect. 
 
-# Resources for our brave new world:
-1. Thinking in react: https://reactjs.org/docs/thinking-in-react.html
-2. Differences between graphql and REST: https://blog.apollographql.com/graphql-vs-rest-5d425123e34b
-
+# What's the big picture? Here's a list of articles to jumpstart your understanding:
+1. "Composition vs Inheritance." A simple rejection of traditional object oriented conventions for the frontend. https://reactjs.org/docs/composition-vs-inheritance.html
+2. "Thinking in react." Just read and accept the way: https://reactjs.org/docs/thinking-in-react.html
+3. Differences between graphql and REST: https://blog.apollographql.com/graphql-vs-rest-5d425123e34b
