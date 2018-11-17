@@ -4,13 +4,13 @@ This a Drupal 8 gatsby V2 starter kit designed to work out-of-the-box (more or l
 Drupal site: http://dev-drupal-gatsby.pantheonsite.io/
 Gatsby site: https://master--clever-gates-db60f2.netlify.com/
 
-## Gatsby Setup 
-1. Fork and/or clone this repo into a directory... any directory (no vm/mamp nonsense needed). 
-2. run "npm install --global gatsby-cli" (google "install node" if this doesn't work)
-3. cd to your repo directory and run "gatsby develop" 
-4. you should see our example drupal content on your local site: http://localhost:8000 
+## Gatsby Setup (required)
+1. Fork and/or clone this repo. It shouldn't matter where you put it. (no vm/mamp nonsense needed). 
+2. CD to the root of the starter kit directory. Run "npm install." (google "install node" if this doesn't work)
+3. Install gatsby-cli. Command is "npm install --global gatsby-cli" 
+4. In the root of the repo, now run "gatsby develop." Site should now be available at http://localhost:8000 
 
-## Drupal 8 setup 
+## Drupal 8 setup (optional)
 1. You'll need drupal to be hosted remotely, and be accessible via the web. I'd recommend setting up a free https://pantheon.io/register drupal 8 site for testing this if want to save time! 
 3. Install a standard profile
 4. Download and enable: [webhooks](https://www.drupal.org/project/webhooks), [ctools](https://www.drupal.org/project/ctools), [token](https://www.drupal.org/project/token), [pathauto](https://www.drupal.org/project/pathauto), and [jsonapi](https://www.drupal.org/project/jsonapi). 
@@ -19,11 +19,11 @@ Gatsby site: https://master--clever-gates-db60f2.netlify.com/
 8. Configure automatic paths for taxonomy term tags, and articles (otherwise, just be sure to give your tags and articles url aliases). 
 9. Create an article that includes an image, and a tag. 
 
-## Connect the sites 
+## Connect the sites (optional)
 1. At the root of the gatsby repo, edit "gatsby-config.js" 
 2. Replace "http://dev-drupal-gatsby.pantheonsite.io/" with your site's publically accessible url. 
 
-## Setup a live CI enviroment 
+## Setup a live CI enviroment (optional)
 1. Sign up for a free netlify.com account. 
 2. Connect your github repo (forked or cloned from this code)
 3. select "gatsby" as the platform
