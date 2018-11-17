@@ -32,12 +32,7 @@ Gatsby site: https://master--clever-gates-db60f2.netlify.com/
 
 By this point your netlify gatsby site will auto-update anytime you *push to master branch*, or *update content* in drupal. When working locally, you'll have to shut down "gatsby develop" and restart it for content changes to take effect. 
 
-# Motivations for creating a new starter kit. 
-Confession: I'm very new to react/gatsby. This repo is based on https://github.com/gatsbyjs/gatsby/tree/master/examples/using-drupal
-
-Here's why I'm developing "yet another." 
-1. I just wanted drupal and gatsby to work out of the box. I didn't want to have to build a recipe sharing site just to get started. 
-2. I'm looking to create efficent *patterns* that can be applied in any drupal gatsby integration.
-3. I like to learn new things. Please contact me or open an issue if you see I've done something wrong, or unnecessarily brutal. I'll warn you ahead of time my frontend is rusty... I'm mostly concerned with structure of components, the queries, and the pipelines. 
-
+# Resources for our brave new world:
+1. Thinking in react: https://reactjs.org/docs/thinking-in-react.html
+2. Differences between graphql and REST: https://blog.apollographql.com/graphql-vs-rest-5d425123e34b
 
