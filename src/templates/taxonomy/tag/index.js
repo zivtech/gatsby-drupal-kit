@@ -2,9 +2,11 @@ import React from "react";
 import Layout from "../../../components/layouts/default";
 import Teaser from "../../../components/content/teaser";
 import { graphql } from "gatsby";
+import {Helmet} from "react-helmet";
 
 const CategoryTemplate = ({ data }) => (
   <Layout data={data}>
+    <Helmet title={data.taxonomyTermTags.name} />
     <h1>{data.taxonomyTermTags.name}</h1>
     {data.allNodeArticle.edges.map(({ node }) => (
       <Teaser
