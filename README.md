@@ -6,7 +6,7 @@ Gatsby site: https://master--clever-gates-db60f2.netlify.com/
 
 ## Gatsby Setup (required)
 1. Fork, download, or clone this repo. It shouldn't matter where you put it. (no vm/mamp nonsense needed). 
-2. Usign the command line, cd to the root of this repo. Run "npm install." (google "install node" if this doesn't work)
+2. Using the command line, cd to the root of this repo. Run "npm install." (google "install node" if this doesn't work)
 3. Install gatsby-cli. Command is "npm install --global gatsby-cli" 
 4. From the root directory of the repo, run "gatsby develop." Once the setup process completes, you can start working with the site at http://localhost:8000. For the most part, the compiler will process code changes in ~1 second. Change some code, and your browser should actually automatically refresh! 
 
