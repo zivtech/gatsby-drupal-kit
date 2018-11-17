@@ -18,6 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
+    console.log('hear this netlify?')
     const articleTemplate = path.resolve(`src/templates/node/article/index.js`)
     const pageTemplate = path.resolve(`src/templates/node/page/index.js`)
     const categoryTemplate = path.resolve(`src/templates/taxonomy/tag/index.js`)
