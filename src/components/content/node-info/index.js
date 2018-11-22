@@ -10,7 +10,7 @@ const NodeInfo = props => {
   return (
     <NodeInfoContainer>
       By Dr. Billy Wayne Ruddick | Filed under:
-      <span classname="tags">
+      <span className="tags">
         {props.node.relationships &&
           props.node.relationships.field_tags.map(ing => (
             <Link key={ing.path.alias} to={ing.path.alias}>

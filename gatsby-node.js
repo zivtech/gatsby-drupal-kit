@@ -18,7 +18,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
-    console.log('hear this netlify?')
     const articleTemplate = path.resolve(`src/templates/node/article/index.js`)
     const pageTemplate = path.resolve(`src/templates/node/page/index.js`)
     const categoryTemplate = path.resolve(`src/templates/taxonomy/tag/index.js`)
@@ -92,7 +91,6 @@ exports.createPages = ({ actions, graphql }) => {
         })
        
         result.data.allNodeArticle.edges.forEach(({ node }) => {
-          console.log(node)
           createPage({
             path: node.path.alias,
             component: articleTemplate,
@@ -107,7 +105,8 @@ exports.createPages = ({ actions, graphql }) => {
             path: node.path.alias,
             component: categoryTemplate,
             context: {
-              tid: node.tid
+              tid: node.tid,
+              title: node.name
             },
           })
         });

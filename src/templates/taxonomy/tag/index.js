@@ -30,13 +30,22 @@ export const query = graphql`
   query($tid: Int) {
     ...AllPages
     ...AllTags
-    taxonomyTermTags(tid: { eq: $tid }) {
-      tid
+    taxonomyTermTags(tid: {eq: $tid}) {
       name
     }
     allNodeArticle(
       sort: { fields: nid, order: DESC }
-      filter: { relationships: { field_tags: { tid: { eq: $tid } } } }
+      filter: {
+        relationships: {
+          field_tags: {
+            elemMatch: {
+              tid: {
+                eq: $tid
+              }
+            }
+          }
+        }
+      }
     ) {
       edges {
         node {

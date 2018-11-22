@@ -9,7 +9,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "extract-text-webpack-plugin": "next",
-    "gatsby": "next",
+    "gatsby": "^2.0.54",
     "gatsby-image": "next",
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "next",
