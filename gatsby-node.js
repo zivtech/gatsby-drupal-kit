@@ -90,7 +90,9 @@ exports.createPages = ({ actions, graphql }) => {
             },
           })
         })
+       
         result.data.allNodeArticle.edges.forEach(({ node }) => {
+          console.log(node)
           createPage({
             path: node.path.alias,
             component: articleTemplate,

@@ -6,13 +6,16 @@ import styled from "styled-components";
 const BodyWrapper = styled.div`
   align-items: center;
   justify-content: center;
-`;
-
+  h1,h2, h3, h4 {
+  font-family:limelight
+  }
+  `;
 const PageWrapper = styled.div`
   margin: 3em auto;  
   clear: both;
   max-width:960px;
-`;
+  `;
+
 
 const MainContentWrapper = styled.div`
   clear: both;
