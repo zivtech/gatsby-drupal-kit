@@ -15,8 +15,6 @@ export default PageTemplate;
 
 export const query = graphql`
   query($nid: Int!) {
-    ...MainMenu
-    ...AllPages
     nodePage(nid: { eq: $nid }) {
       title
       body {

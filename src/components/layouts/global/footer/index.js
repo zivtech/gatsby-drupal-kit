@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 
 // These style components create HTML elements with a autogenerate class
 // styles are not inline, they end up in a seperate CSS file
@@ -29,13 +30,13 @@ const FooterListItem = styled.li`
   margin: 0 0em 0 2em;
 `;
 
-const FooterLinks = props => {
+const Footer = ({ data }) => {
   return (
     <FooterWrapper>
       <div className="content">
         <FooterList>
-          {props.items &&
-            props.items.map(ing => (
+          {data.allNodePage.edges &&
+            data.allNodePage.edges.map(ing => (
               <FooterListItem key={ing.node.path.alias}>
                 <Link to={ing.node.path.alias}>{ing.node.title}</Link>
               </FooterListItem>
@@ -63,4 +64,22 @@ const FooterLinks = props => {
   );
 };
 
-export default FooterLinks;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allNodePage {
+          edges {
+            node {
+              title
+              path {
+                alias
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Footer data={data} {...props} />}
+  />
+);

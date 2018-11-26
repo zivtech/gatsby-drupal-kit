@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 
 const HeaderWrapper = styled.div`
   background-color: #eee;
   padding: 2em 3em;
   .inner {
-    width:960px;
-    margin:0 auto;
-    padding:1em 0;
+    width: 960px;
+    margin: 0 auto;
+    padding: 1em 0;
   }
 `;
 
@@ -19,8 +20,8 @@ const Logo = styled.h1`
 `;
 
 const MenuList = styled.ul`
-  margin:0;
-  text-align:center;
+  margin: 0;
+  text-align: center;
   li {
     float: left;
     list-style: none;
@@ -30,7 +31,7 @@ const MenuList = styled.ul`
   }
 `;
 
-const Header = props => {
+const Header = ({ data }) => {
   // By Default... we're simply using data from tags taxonomy as the
   // the main menu
   return (
@@ -39,16 +40,44 @@ const Header = props => {
       <div className="inner">
         <Logo>Drupal Gatsby Kit</Logo>
         <MenuList>
-          {props.items &&
-            props.items.map(ing => (
+          {data.Drupal.menuByName.links &&
+            data.Drupal.menuByName.links.map(ing => (
               <li key={ing.url.path}>
                 <Link to={ing.url.path}>{ing.label}</Link>
               </li>
-          ))}
+            ))}
         </MenuList>
       </div>
     </HeaderWrapper>
   );
 };
 
-export default Header;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allNodePage {
+          edges {
+            node {
+              title
+              path {
+                alias
+              }
+            }
+          }
+        }
+        Drupal {
+          menuByName(name: "main") {
+            links {
+              url {
+                path
+              }
+              label
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Header data={data} {...props} />}
+  />
+);

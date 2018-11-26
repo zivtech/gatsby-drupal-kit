@@ -44,34 +44,4 @@ fragment ArticleNode on node__article {
 }
 `;
 
-export const MainMenu = graphql`
-fragment MainMenu on Query { 
-  Drupal {
-    menuByName(name: "main") {
-      links {
-        url {
-          path
-        }
-        label
-      }
-    }
-  }
-}
-`;
-
-export const AllPages = graphql`
-fragment AllPages on Query { 
-  allNodePage {
-    edges {
-      node {
-        title
-        path {
-          alias
-        }
-      }
-    }
-  }
-}
-`;
-
 

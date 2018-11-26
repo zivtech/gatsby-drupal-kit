@@ -35,8 +35,6 @@ export default ArticleTemplate;
 
 export const query = graphql`
   query($nid: Int!) {
-    ...MainMenu
-    ...AllPages
     nodeArticle(nid: { eq: $nid }) {
       ...ArticleNode
     }

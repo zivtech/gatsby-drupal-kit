@@ -28,8 +28,6 @@ export default CategoryTemplate;
 // call to create page
 export const query = graphql`
   query($tid: Int) {
-    ...AllPages
-    ...MainMenu
     taxonomyTermTags(tid: {eq: $tid}) {
       name
     }
