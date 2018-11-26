@@ -81,5 +81,17 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    // Simple config, passing URL
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "DrupalGraqhQL",
+        // This is field under which it's accessible
+        fieldName: "Drupal",
+        // Url to query from
+        url: "http://dev-drupal-gatsby.pantheonsite.io/graphql",
+      },
+    },
   ],
 }

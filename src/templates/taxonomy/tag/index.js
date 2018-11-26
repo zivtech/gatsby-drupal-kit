@@ -29,7 +29,7 @@ export default CategoryTemplate;
 export const query = graphql`
   query($tid: Int) {
     ...AllPages
-    ...AllTags
+    ...MainMenu
     taxonomyTermTags(tid: {eq: $tid}) {
       name
     }

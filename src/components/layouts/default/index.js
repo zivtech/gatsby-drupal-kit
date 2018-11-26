@@ -7,7 +7,7 @@ const BodyWrapper = styled.div`
   align-items: center;
   justify-content: center;
   h1,h2, h3, h4 {
-  font-family:limelight
+    font-family: 'Montserrat', sans-serif;
   }
   `;
 const PageWrapper = styled.div`
@@ -31,7 +31,7 @@ const HeaderWrapper = styled(Header)`
 const DefaultLayout = props => {
   return (
     <BodyWrapper>
-      <HeaderWrapper items={props.data.allTaxonomyTermTags.edges} />
+      <HeaderWrapper items={props.data.Drupal.menuByName.links} />
       <PageWrapper>
         <MainContentWrapper>{props.children}</MainContentWrapper>
       </PageWrapper>

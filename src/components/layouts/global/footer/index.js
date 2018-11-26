@@ -32,7 +32,7 @@ const FooterListItem = styled.li`
 const FooterLinks = props => {
   return (
     <FooterWrapper>
-      <div class="content">
+      <div className="content">
         <FooterList>
           {props.items &&
             props.items.map(ing => (
@@ -41,7 +41,7 @@ const FooterLinks = props => {
               </FooterListItem>
             ))}
         </FooterList>
-        <div class="info">
+        <div className="info">
           <p>
             <strong>Drupal Gatsby</strong>
           </p>

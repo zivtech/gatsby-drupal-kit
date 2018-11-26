@@ -44,16 +44,15 @@ fragment ArticleNode on node__article {
 }
 `;
 
-export const AllTags = graphql`
-fragment AllTags on Query { 
-  allTaxonomyTermTags {
-    edges {
-      node {
-        name
-        tid
-        path {
-          alias
+export const MainMenu = graphql`
+fragment MainMenu on Query { 
+  Drupal {
+    menuByName(name: "main") {
+      links {
+        url {
+          path
         }
+        label
       }
     }
   }

@@ -38,7 +38,7 @@ export default IndexPage;
 export const query = graphql`
   query pageQuery {
     ...AllPages
-    ...AllTags
+    ...MainMenu
     latestArticles: allNodeArticle(
       limit: 1000
       skip: 1

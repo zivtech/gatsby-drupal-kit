@@ -14,7 +14,7 @@ const FeaturedImage = styled(Img)`
   float:left;
 `
 const FeaturedHeadline = styled.h2`
-  font-size:3em;
+  font-size:2em;
 `
 
 const Featured = props => {
