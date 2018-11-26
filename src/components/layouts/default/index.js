@@ -7,12 +7,7 @@ import styled from "styled-components";
 const BodyWrapper = styled.div`
   align-items: center;
   justify-content: center;
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Montserrat", sans-serif;
-  }
+  font-family: "Open Sans", sans-serif;
 `;
 
 const PageWrapper = styled.div`
@@ -26,6 +21,8 @@ const MainContentWrapper = styled.div`
   margin: 3rem auto;
 `;
 
+// note we are passing in the Header component 
+// and rewriting it as a styled component
 const HeaderWrapper = styled(Header)`
   clear: both;
   margin: 3rem auto;
