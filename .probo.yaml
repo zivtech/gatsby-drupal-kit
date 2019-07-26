@@ -1,0 +1,19 @@
+steps:
+  - name: Update Node.js
+    plugin: Script
+    script: |
+      npm install --global n
+      n latest
+  - name: Upgrade npm
+    command: 'npm install --global npm@latest-4'
+  - name: Install dependencies
+    plugin: Script
+    script: |
+      npm install --global gatsby-cli
+      npm install
+  - name: Build Gatsby site.
+    plugin: Script
+    script: |
+      gatsby build --verbose
+      mv public/ html/
+      mv html/ /var/www
