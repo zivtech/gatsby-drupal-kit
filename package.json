@@ -29,7 +29,7 @@
     "gatsby-source-drupal": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-source-graphql": "^2.0.6",
-    "gatsby-transformer-remark": "^2.1.12",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "next",
     "glamor": "^2.20.40",
     "lodash": "^4.17.11",
